@@ -15,7 +15,6 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Instant;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.onelogin.saml2.authn.AuthnRequest;
@@ -33,6 +32,8 @@ import com.onelogin.saml2.settings.SettingsBuilder;
 import com.onelogin.saml2.util.Constants;
 import com.onelogin.saml2.util.Util;
 
+import play.Logger;
+
 /**
  * Main class of OneLogin's Java Toolkit.
  *
@@ -47,7 +48,7 @@ public class Auth {
 	/**
      * Private property to construct a logger for this class.
      */
-	private static final Logger LOGGER = LoggerFactory.getLogger(Auth.class);
+	private static final Logger LOGGER = new play.Logger();
 
 	/**
      * Settings data.
