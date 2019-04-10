@@ -57,7 +57,7 @@ public class PlayRequest extends HttpRequest {
 
     @Override
     public String getRequestURL() {
-        return this.getScheme() + "://" + request.path;
+        return request.getBase() + request.path;
     }
 
     @Override
