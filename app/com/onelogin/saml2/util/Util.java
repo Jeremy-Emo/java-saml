@@ -71,7 +71,6 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISOPeriodFormat;
 import org.joda.time.format.PeriodFormatter;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
@@ -84,6 +83,8 @@ import org.xml.sax.SAXException;
 import com.onelogin.saml2.exception.ValidationError;
 import com.onelogin.saml2.exception.XMLEntityException;
 
+import play.Logger;
+
 
 /**
  * Util class of OneLogin's Java Toolkit.
@@ -94,7 +95,7 @@ public final class Util {
 	/**
      * Private property to construct a logger for this class.
      */
-	private static final Logger LOGGER = LoggerFactory.getLogger(Util.class);
+	private static final Logger LOGGER = new play.Logger();
 
     private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'").withZone(DateTimeZone.UTC);
 	private static final DateTimeFormatter DATE_TIME_FORMAT_MILLS = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").withZone(DateTimeZone.UTC);
